@@ -1,3 +1,6 @@
-100.times do
-  Student.create(:name => 'Hi', :email => 'balh@blah.com')
+require 'faker'
+def seed
+15.times do
+  Task.create(:task => Faker::Lorem.sentence)
+end
 end
