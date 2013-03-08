@@ -7,7 +7,7 @@ class TodoList
   def initialize
     begin
       self.send ARGV[0]
-      rescue help
+      #rescue help
     end
   end
 

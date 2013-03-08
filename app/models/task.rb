@@ -2,6 +2,7 @@ require_relative '../../db/config'
 class Task < ActiveRecord::Base
 
   def self.delete_task(task)
+    puts "Deleted \"#{Task.limit(task).last.task}\" from your TODO list..."
     Task.limit(task).last.delete
   end
 
@@ -15,10 +16,11 @@ class Task < ActiveRecord::Base
 
   def self.list
     Task.all.each_with_index do |element, index|
+      index += 1
       if element.completed_at
-        puts "[x] #{index + 1} : #{element.task }"
+        puts "[x] #{"%02d" % index}: #{element.task}"
       else 
-        puts "[ ] #{index + 1} : #{element.task }"
+        puts "[ ] #{"%02d" % index}: #{element.task}"
       end
     end
   end
