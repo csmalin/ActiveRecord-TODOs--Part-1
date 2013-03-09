@@ -1,4 +1,3 @@
-require_relative '../../db/config'
 class Task < ActiveRecord::Base
 
   def self.delete_task(task)

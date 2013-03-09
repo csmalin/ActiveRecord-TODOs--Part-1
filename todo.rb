@@ -1,6 +1,5 @@
 require_relative 'config/application'
 require 'date'
-# puts "Put your application code in #{File.expand_path(__FILE__)}"
 
 class TodoList
 
